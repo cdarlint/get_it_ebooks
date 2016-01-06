@@ -1,0 +1,20 @@
+CREATE TABLE ebooks
+(
+    id INTEGER,
+    repost INTEGER,
+    title TEXT,
+    desc TEXT,
+    publisher TEXT,
+    author TEXT,
+    isbn TEXT,
+    year TEXT,
+    pages TEXT,
+    lang TEXT,
+    size TEXT,
+    format TEXT,
+    link_down TEXT,
+    link_buy TEXT,
+    link_rel_1 INTEGER,
+    link_rel_2 INTEGER,
+    link_rel_3 INTEGER
+);
