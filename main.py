@@ -22,8 +22,8 @@ par={'repost':'/html/body/table/tr/td/div/h4',
      'link_rel_2':'//table//table//table//table/tr[1]/td[2]/a[2]',
      'link_rel_3':'//table//table//table//table/tr[1]/td[3]/a[2]',}
 parkeys=par.keys()
-
-for nid in range(1,6589):
+repost_detail_status={'[repost]':1,'[Early Release]':2}
+for nid in range(6588,6629):
     r=requests.get('http://it-ebooks.info/book/'+str(nid)+'/')
     if r.url.endswith('/404/'):
         continue
@@ -38,7 +38,12 @@ for nid in range(1,6589):
                     if key.startswith('link_rel'):
                         info_cur=info_cur.split('/')[2]
                 elif key=='repost':
-                    info_cur=1
+                    rp_text=key_get[0].text
+                    if rp_text in repost_detail_status:
+                        info_cur=repost_detail_status[rp_text]
+                    else:
+                        print('new repost status: ',rp_text)
+                        info_cur=99
                 else:
                     info_cur=key_get[0].text_content()
                     if key.startswith('desc'):
