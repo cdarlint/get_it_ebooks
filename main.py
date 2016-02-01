@@ -23,7 +23,7 @@ par={'repost':'/html/body/table/tr/td/div/h4',
      'link_rel_3':'//table//table//table//table/tr[1]/td[3]/a[2]',}
 parkeys=par.keys()
 repost_detail_status={'[repost]':1,'[Early Release]':2}
-for nid in range(6588,6629):
+for nid in range(6815,6826):
     r=requests.get('http://it-ebooks.info/book/'+str(nid)+'/')
     if r.url.endswith('/404/'):
         continue
